@@ -10,34 +10,34 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 public class GUI extends ApplicationFrame {
     long[][] times;
-    private GUI(String title, String chartTitle, long[][] times){
+    private GUI(String title, String chartTitle, long[][] times, int x, int y, boolean avg, PView.Time scale){
         super(title);
         this.times= times;
         JFreeChart barGraph = ChartFactory.createBarChart(
                 chartTitle,
-                "Category",
-                "time (ms)",
+                avg? "Averaged Function": "Function",
+                "time ("+scale+")",
                 createDataset(),
                 PlotOrientation.VERTICAL,
                 true,true,false
                 );
         ChartPanel chartPanel = new ChartPanel(barGraph);
-        chartPanel.setPreferredSize(new java.awt.Dimension(1050,750));
+        chartPanel.setPreferredSize(new java.awt.Dimension(x,y));
         setContentPane(chartPanel);
     }
     private CategoryDataset createDataset(){
         final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for(int i=0;i<times.length;i++){
             for(int j=0;j<times[0].length;j++){
-                String s = "Function "+Integer.toString(i);
-                String t = "Trial "+ Integer.toString(j);
+                String s = "Function "+Integer.toString(i+1);
+                String t = "Trial "+ Integer.toString(j+1);
                 dataset.addValue(times[i][j], t, s);
             }
         }
         return dataset;
     }
-    protected static void createGUI(long[][] times){
-        GUI chart = new GUI("","",times);
+    protected static void createGUI(long[][] times, int x, int y, boolean average, PView.Time scale){
+        GUI chart = new GUI("JBench","",times, x, y, average, scale);
         chart.pack();
         chart.setVisible(true);
     }
