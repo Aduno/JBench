@@ -1,6 +1,7 @@
 # JBench Overview
 Is a GUI benchmarking tool to visually compare performance of functions. The functions are passed into this utility and the runtime results are presented through a graph. 
-
+![Screenshots](/screenshots/averaged.PNG)
+![Screenshots](/screenshots/non-averaged.PNG)
 ## Tutorial
 1. The PView class must be first instantiated with the number of trials to be run for each function and whehter to average the times. Additionally, frame size of the GUI can be adjusted with additional parameters
 
