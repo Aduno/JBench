@@ -25,7 +25,7 @@ functions.add(Test::function1);
 
 // or the latter option works as well
 
-function.add(()->Test.function2);
+functions.add(()->Test.function2);
 
 measure.benchmark(functions);
 ```
