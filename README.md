@@ -4,7 +4,7 @@ Is a GUI benchmarking tool to visually compare performance of functions. The fun
 ![Screenshots](/screenshots/averaged.PNG)
 ![Screenshots](/screenshots/non-averaged.PNG)
 ## Tutorial
-1. Instantiated PView class with the number of trials to be run for each function and whehter to average the times. Additionally, include timescale.The available time scales are nano, milli, sec, and minutes
+1. Instantiate a PView class with the number of trials to be run for each function and whehter to average the times. Additionally, include timescale.The available time scales are nano, milli, sec, and minutes
 
 ```
 // PView (trialNum, average, timescale framesizeX, framesizeY) (Last two optional)
